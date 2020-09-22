@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>GameMaster.h</itemPath>
+      <itemPath>bet.h</itemPath>
+      <itemPath>blackjackcard.h</itemPath>
+      <itemPath>blackjackplayer.h</itemPath>
+      <itemPath>card.h</itemPath>
+      <itemPath>deck.h</itemPath>
+      <itemPath>hand.h</itemPath>
+      <itemPath>hand_backup.h</itemPath>
+      <itemPath>outcome.h</itemPath>
+      <itemPath>player.h</itemPath>
+      <itemPath>shoe.h</itemPath>
+      <itemPath>table.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>GameMaster.cpp</itemPath>
+      <itemPath>bet.cpp</itemPath>
+      <itemPath>blackjackcard.cpp</itemPath>
+      <itemPath>blackjackplayer.cpp</itemPath>
+      <itemPath>card.cpp</itemPath>
+      <itemPath>deck.cpp</itemPath>
+      <itemPath>hand.cpp</itemPath>
+      <itemPath>hand_backup.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>outcome.cpp</itemPath>
+      <itemPath>player.cpp</itemPath>
+      <itemPath>shoe.cpp</itemPath>
+      <itemPath>table.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="GameMaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameMaster.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="blackjackcard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="blackjackcard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="blackjackplayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="blackjackplayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="card.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="card.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="deck.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="deck.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hand_backup.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hand_backup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="outcome.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="outcome.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shoe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="shoe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="table.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="table.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="GameMaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameMaster.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="blackjackcard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="blackjackcard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="blackjackplayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="blackjackplayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="card.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="card.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="deck.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="deck.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hand_backup.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hand_backup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="outcome.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="outcome.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shoe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="shoe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="table.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="table.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

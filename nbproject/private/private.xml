@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>1</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>table.cpp</url>
+            <bookmark id="1">
+                <name/>
+                <line>33</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/hand.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/card.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/GameMaster.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/card.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/shoe.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/blackjackplayer.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/bet.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/shoe.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/GameMaster.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/outcome.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/blackjackcard.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/table.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/hand.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/table.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/player.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/player.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/deck.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/outcome.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/blackjackcard.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/bet.cpp</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/deck.h</file>
+            <file>file:/Users/alpha/Desktop/BlackJack%202/blackjackplayer.h</file>
+        </group>
+    </open-files>
+</project-private>
