@@ -1,5 +1,4 @@
 #include "hand.h"
-#include <iostream>
 
 Hand::Hand() {
     // Ehhh nuffin
@@ -62,11 +61,18 @@ bool Hand::busted() {
     return false;
 }
 
+// Need to still offer a question if they want to split or not.
 bool Hand::splittable() {
     if (this->cards.size() == 2 && this->cards[0].getGameValue() == this->cards[0].getGameValue())
         return true;
     this->declinedSplit = true;
     return false;
+}
+
+Hand Hand::split() {
+    // need to create an actual split
+    Hand t;
+    return t;
 }
 
 BlackjackCard Hand::getUpCard() {

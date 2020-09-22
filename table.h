@@ -3,9 +3,7 @@
 #include <vector>
 #include "bet.h"
 #include "hand.h"
-#include "player.h"
-
-class BlackjackPlayer;
+#include "blackjackplayer.h"
 
 class Table {
     

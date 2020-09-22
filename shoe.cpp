@@ -9,10 +9,10 @@ Shoe::Shoe() {
 Shoe::Shoe(int deckCount, int offSet) {
     this->deckCount = deckCount;
     this->offSet = offSet;
-    this->build();
+    this->Build();
 }
 
-void Shoe::build() {
+void Shoe::Build() {
     vector<BlackjackCard> t;
     Deck deck;
     

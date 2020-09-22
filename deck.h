@@ -2,37 +2,22 @@
 #define DECK_H
 
 #include <vector>
-#include "card.h"
+#include "blackjackcard.h"
+
+using namespace std;
 
 class Deck {
-public:
-    void build();
-    Deck();
-    void show();
-    void shuffle();
-    BlackjackCard drawCard();
-    const std::vector<BlackjackCard> getCards();
-    void setCards(std::vector<BlackjackCard>);
-    
-private:
-    
-protected:
-    std::vector<BlackjackCard> cards;
-    
-};
-
-class Shoe : public Deck {
-    
-public:
-    Shoe();
-    Shoe(int decks, int stopDealing = 1);
-    void build();
-    std::vector<BlackjackCard> getCards();
-
-private:
-    int deckCount;
-    int offSet;
-        
+    private:
+    protected:
+        vector<BlackjackCard> cards;
+    public:
+        Deck();
+        void build();
+        void show();
+        void shuffle();
+        BlackjackCard drawCard();
+        const vector<BlackjackCard> getCards();
+        void setCards(vector<BlackjackCard>);
 };
 
 #endif

@@ -1,8 +1,8 @@
 #ifndef HAND_H
 #define HAND_H
 #include <vector>
+#include "blackjackcard.h"
 #include "bet.h"
-#include "card.h"
 
 class Hand {
 public:
@@ -17,6 +17,7 @@ public:
     bool blackjack();
     bool busted();
     bool splittable();
+    Hand split();
     BlackjackCard getUpCard();
     
     void setBet(Bet ante);

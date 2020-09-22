@@ -6,8 +6,6 @@
 #include <random>
 #include <iostream>
 
-using namespace std;
-
 Deck::Deck() {
     build();
 }
