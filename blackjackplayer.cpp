@@ -9,12 +9,14 @@ BlackjackPlayer::BlackjackPlayer() {
 BlackjackPlayer::BlackjackPlayer(Table t) {
     this->table = &t;
 }
-
-void BlackjackPlayer::newGame() {
+//Changed new game to clear your hand, and push back two cards.
+void BlackjackPlayer::newGame(BlackjackCard up, BlackjackCard down) {
     this->hands.clear();
-    // Create an empty vector for any hand instances
+    this->hands.push_back(Hand(up,down));
 }
-
+Hand BlackjackPlayer::getHand(int i){
+    return hands[i];
+}
 void BlackjackPlayer::placeBets() {
     this->hands.push_back(Hand());
     std:: string ante;
@@ -25,11 +27,6 @@ void BlackjackPlayer::placeBets() {
     // Create an empty hand and adds it to this->hand vector
     // Create a new ante then updates table with bet-hand
 }
-
-Hand BlackjackPlayer::getFirstHand() {
-    return this->hands[0];
-}
-
 bool BlackjackPlayer::evenMoney(Hand hand) {
     char input;
     std::cout << "Even money? :";
@@ -46,13 +43,6 @@ bool BlackjackPlayer::insurance(Hand hand) {
     std::cin >> input;
     
     if (input == "Y") {
-        std::cout << "Enter a bet: ";
-        cin.ignore();
-        std::getline(std::cin, input);
-        
-        //&table->placeBet(Bet(std::stoi(input), Outcome("insurance", 2, 1)), hand);
-        this->table->placeBet(Bet(std::stoi(input), Outcome("insurance", 2, 1)), hand);
-        
         return true;
     }
     return false;
@@ -72,8 +62,7 @@ bool BlackjackPlayer::doubleDown(Hand hand) {
     if (input == "Y") {
         cin.ignore();
         std::getline(std::cin, input);
-        
-        hand.setBet(Bet(hand.getBet().amount()*2, Outcome("double down", 1, 1)));
+        //Initial Bet => from previous bet.
         
         return true;
     }

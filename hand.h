@@ -19,14 +19,12 @@ public:
     bool splittable();
     Hand split();
     BlackjackCard getUpCard();
+    BlackjackCard getCard(int i);
     
-    void setBet(Bet ante);
-    Bet getBet();
     std::string toString();
 private:
     bool declinedSplit;
     std::vector<BlackjackCard> cards;
-    Bet ante;
 };
 
 #endif

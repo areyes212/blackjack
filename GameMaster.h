@@ -2,6 +2,8 @@
 #define GAMEMASTER_H
 
 #include "table.h"
+#include <iostream>
+#include <string>
 class Shoe;
 class Hand;
 class Table;
@@ -17,6 +19,7 @@ private:
     Table *table;
     Shoe *shoe;
     Hand *dealer; // might change to player, will prob need templates then
+    vector<int> indx;
 };
 
 #endif /* GAMEMASTER_H */

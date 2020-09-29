@@ -78,13 +78,8 @@ Hand Hand::split() {
 BlackjackCard Hand::getUpCard() {
     return this->cards[0];
 }
-
-void Hand::setBet(Bet ante) {
-    this->ante = ante;
-}
-
-Bet Hand::getBet() {
-    return this->ante;
+BlackjackCard Hand::getCard(int i){
+    return this->cards[i];
 }
 
 std::string Hand::toString() {

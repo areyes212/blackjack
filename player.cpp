@@ -7,8 +7,8 @@
 Player::Player() {
     this->budget = 1000;
 }
-
-void Player::won(Bet bet) {
+//Added an i to indicate which pool won.
+void Player::won(Bet bet,int i) {
     cout << "You won " << bet.winAmount() << endl;
 }
 

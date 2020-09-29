@@ -1,5 +1,6 @@
 #include "table.h"
 #include <iostream>
+#include <valarray>
 
 Table::Table() {
     //nuffin
@@ -7,17 +8,16 @@ Table::Table() {
 
 Table::Table(std::vector<Bet> bets) {
     this->bets = bets;
+    this->limit = 500;
+    this->minimum = 100;
 }
 
-void Table::placeBet(Bet bet, Hand hand) {
-    hand.setBet(bet);
+void Table::placeBet(Bet bet) {
     this->bets.push_back(bet);
-    
-    std::cout << bet.toString() << " was placed on the table." << std::endl;
 }
 
-std::vector<Bet> Table::getBets() {
-    return this->bets;
+Bet Table::getBets(int i) {
+    return this->bets[i];
 }
 
 void Table::addPlayer(BlackjackPlayer p) {
@@ -27,7 +27,12 @@ void Table::addPlayer(BlackjackPlayer p) {
 std::vector<BlackjackPlayer> Table::getPlayers() {
     return this->players;
 }
-
+int Table::getMin(){
+    return minimum;
+}
+int Table::getMax(){
+    return limit;
+}
 std::string Table::toString() {
     std::string s;
     

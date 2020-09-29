@@ -15,7 +15,7 @@ public:
     bool insurance(Hand hand);
     bool doubleDown(Hand hand);
     bool hit(Hand hand);
-    void won(Bet bet);
+    void won(Bet bet,int i);
     void lost();
 
 protected:

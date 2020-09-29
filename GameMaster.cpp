@@ -19,8 +19,6 @@ GameMaster::GameMaster(Shoe shoe, Table table) {
     this->shoe = &shoe;
     this->table = &table;
 }
-   
-void GameMaster::loop() {
     /**
      * goes through main blackjack game
      * table.players[i].newGame() to create empty hands for each player
@@ -50,11 +48,54 @@ void GameMaster::loop() {
      * go through all bets that are still on the table and compare
      * the player hand against the dealer hand to see who won
      */
+void GameMaster::loop() {
+    //temporary only one player.
+    for(int i = 0; i < table->getPlayers().size();i++){
+        int betSize = - 1;
+        std::cout << "How much would you like to bet? :";
+        while(!(betSize > table->getMin() && betSize < table->getMax())){
+            cin >> betSize;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Invalid input, please use a value " << table->getMin() << "-" << table->getMax() << " :";                
+            }
+            else if(betSize < table->getMin() || betSize > table->getMax()){
+                cout << "Out of bounds, please use a value " << table->getMin() << "-" << table->getMax() << " :";
+            }
+        }
+        table->placeBet(Bet(betSize,Outcome("pre-flop",3,2)));
+        indx.push_back(i);
+        table->getPlayers()[i].newGame(this->shoe->drawCard(), this->shoe->drawCard());
+        std::cout << "Your Hand:" << endl;
+        std::cout << table->getPlayers()[i].getHand(0).getCard(0).toString() << endl;
+        std::cout << table->getPlayers()[i].getHand(1).getCard(1).toString() << endl;
+    }
+    
+    dealer->clear();
+    dealer->add(this->shoe->drawCard());
+    dealer->add(this->shoe->drawCard());
+    std::cout << "Dealer Cards: ";
+    std::cout << dealer->getCard(0).toString() << endl << "?????" << endl;
+    
+    for(int i = 0; i < table->getPlayers().size();i++){
+        if(this->dealer->getUpCard().getValue() == ace){
+            if(table->getPlayers()[i].getHand(0).hardTotal() == 21 && table->getPlayers().size() == 2){
+                if(table->getPlayers()[i].evenMoney(table->getPlayers()[i].getHand(0))){
+                    table->placeBet(Bet(table->getBets(i).getAmount() / 2,Outcome("Even Money",3,2)));
+                    indx.push_back(i);
+                }
+            }else{
+                if(table->getPlayers()[i].insurance(table->getPlayers()[i].getHand(0))){
+                    
+                }
+            }
+        }
+    }
+    
     
 }
-   
-void GameMaster::insurance(Hand hand) {
-    /**
+/**
      * check player.getFirstHand() for blackjack
      * 
      * if blackjack then offer player.evenMoney()
@@ -69,7 +110,11 @@ void GameMaster::insurance(Hand hand) {
      * 
      * if no dealer blackjack then insurance bet is loser but ante bet stays
      *
-     */
+     */   
+void GameMaster::insurance(Hand hand) {
+    if(hand.getUpCard().getValue() == ace){
+  
+    }
 }
    
 void GameMaster::fillHand() {

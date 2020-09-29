@@ -11,9 +11,9 @@ class BlackjackPlayer : public Player {
 public:
     BlackjackPlayer();
     BlackjackPlayer(Table table);
-    void newGame();
+    void newGame(BlackjackCard up, BlackjackCard down);
+    Hand getHand(int i);
     void placeBets();
-    Hand getFirstHand();
     bool evenMoney(Hand hand);
     bool insurance(Hand hand);
     Hand split(Hand hand);
