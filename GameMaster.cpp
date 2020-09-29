@@ -18,6 +18,7 @@
 GameMaster::GameMaster(Shoe shoe, Table table) {
     this->shoe = &shoe;
     this->table = &table;
+    this->indx = 0;
 }
     /**
      * goes through main blackjack game
@@ -48,52 +49,87 @@ GameMaster::GameMaster(Shoe shoe, Table table) {
      * go through all bets that are still on the table and compare
      * the player hand against the dealer hand to see who won
      */
-void GameMaster::loop() {
-    //temporary only one player.
-    for(int i = 0; i < table->getPlayers().size();i++){
-        int betSize = - 1;
-        std::cout << "How much would you like to bet? :";
-        while(!(betSize > table->getMin() && betSize < table->getMax())){
-            cin >> betSize;
-            if(cin.fail()){
-                cin.clear();
-                cin.ignore();
-                cout << "Invalid input, please use a value " << table->getMin() << "-" << table->getMax() << " :";                
-            }
-            else if(betSize < table->getMin() || betSize > table->getMax()){
-                cout << "Out of bounds, please use a value " << table->getMin() << "-" << table->getMax() << " :";
-            }
+void GameMaster::loop(int i) {
+    //Add checks on betSize by looking at current cash
+    //Have Cash decrement each time bet happens.
+    int betSize = -1;
+    std::cout << "How much would you like to bet? :";
+    while (!(betSize > table->getMin() && betSize < table->getMax())) {
+        cin >> betSize;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input, please use a value " << table->getMin() << "-" << table->getMax() << " :";
+        } else if (betSize < table->getMin() || betSize > table->getMax()) {
+            cout << "Out of bounds, please use a value " << table->getMin() << "-" << table->getMax() << " :";
         }
-        table->placeBet(Bet(betSize,Outcome("pre-flop",3,2)));
-        indx.push_back(i);
-        table->getPlayers()[i].newGame(this->shoe->drawCard(), this->shoe->drawCard());
-        std::cout << "Your Hand:" << endl;
-        std::cout << table->getPlayers()[i].getHand(0).getCard(0).toString() << endl;
-        std::cout << table->getPlayers()[i].getHand(1).getCard(1).toString() << endl;
     }
+    table->placeBet(Bet(betSize, Outcome("pre-flop", 3, 2)));
+    table->getPlayers()[i].newGame(this->shoe->drawCard(), this->shoe->drawCard());
+    std::cout << "Your Hand:" << endl;
+    std::cout << table->getPlayers()[i].getHand(0).getCard(0).toString() << endl;
+    std::cout << table->getPlayers()[i].getHand(1).getCard(1).toString() << endl;
+    
     
     dealer->clear();
     dealer->add(this->shoe->drawCard());
     dealer->add(this->shoe->drawCard());
     std::cout << "Dealer Cards: ";
     std::cout << dealer->getCard(0).toString() << endl << "?????" << endl;
-    
-    for(int i = 0; i < table->getPlayers().size();i++){
-        if(this->dealer->getUpCard().getValue() == ace){
-            if(table->getPlayers()[i].getHand(0).hardTotal() == 21 && table->getPlayers().size() == 2){
-                if(table->getPlayers()[i].evenMoney(table->getPlayers()[i].getHand(0))){
-                    table->placeBet(Bet(table->getBets(i).getAmount() / 2,Outcome("Even Money",3,2)));
-                    indx.push_back(i);
-                }
-            }else{
-                if(table->getPlayers()[i].insurance(table->getPlayers()[i].getHand(0))){
-                    
-                }
+
+
+    if (this->dealer->getUpCard().getValue() == ace) {
+        if (table->getPlayers()[i].getHand(0).hardTotal() == 21 && table->getPlayers().size() == 2) {
+            if (table->getPlayers()[i].evenMoney()) {
+                table->placeBet(Bet(table->getBets(indx).amount() / 2, Outcome("Even Money", 3, 2)));
+            }
+        } else {
+            if (table->getPlayers()[i].insurance()) {
+                table->placeBet(Bet(table->getBets(indx).amount() / 2, Outcome("Insurance", 2, 1)));
             }
         }
     }
     
+    int card1 = table->getPlayers()[i].getHand(0).getCard(0).getValue();
+    int card2 = table->getPlayers()[i].getHand(0).getCard(1).getValue();
+    if (card1 == card2) {
+        if (table->getPlayers()[i].split()) {
+            table->placeBet(Bet(table->getBets(indx).amount(), Outcome("Split", 3, 2)));
+        }
+    }
     
+    bool hit = true;
+    int handTotal;
+    while(hit){
+        if(table->getPlayers()[i].doubleDown()){
+            table->placeBet(Bet(table->getBets(indx).amount(), Outcome("Double Down", 3, 2)));
+            //hit card
+            //showCards
+            //getCardScore
+            hit = false;
+        }
+        if(table->getPlayers()[i].hit()){
+            //hit card
+            //check score
+            if(handTotal > 21){
+                hit = false;
+            }            
+        }else{
+            hit = false;
+        }
+    }
+    
+    bool logic = true;
+    while(logic){
+        //Have dealer compare hand. If dealer < Player = hit dealer.
+        //Stop if hit 21
+    }
+    
+    //Compare Scores
+    //Dish out the bets made by logic
+    //make indx = bets.size() if second player.
+    
+    //If win, setCash = WinAmount
 }
 /**
      * check player.getFirstHand() for blackjack

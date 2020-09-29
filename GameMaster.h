@@ -11,7 +11,7 @@ class Table;
 class GameMaster {
 public:
     GameMaster(Shoe shoe, Table table);
-    void loop();
+    void loop(int i);
     void insurance(Hand hand);
     void fillHand();
     std::string toString();
@@ -19,7 +19,8 @@ private:
     Table *table;
     Shoe *shoe;
     Hand *dealer; // might change to player, will prob need templates then
-    vector<int> indx;
+    int indx;
+    
 };
 
 #endif /* GAMEMASTER_H */

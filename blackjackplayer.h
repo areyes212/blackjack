@@ -14,11 +14,11 @@ public:
     void newGame(BlackjackCard up, BlackjackCard down);
     Hand getHand(int i);
     void placeBets();
-    bool evenMoney(Hand hand);
-    bool insurance(Hand hand);
-    Hand split(Hand hand);
-    bool doubleDown(Hand hand);
-    bool hit(Hand hand);
+    bool evenMoney();
+    bool insurance();
+    bool split();
+    bool doubleDown();
+    bool hit();
     std::string toString();
 private:
     std::vector<Hand> hands;

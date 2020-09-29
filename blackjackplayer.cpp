@@ -27,9 +27,9 @@ void BlackjackPlayer::placeBets() {
     // Create an empty hand and adds it to this->hand vector
     // Create a new ante then updates table with bet-hand
 }
-bool BlackjackPlayer::evenMoney(Hand hand) {
+bool BlackjackPlayer::evenMoney() {
     char input;
-    std::cout << "Even money? :";
+    std::cout << "Even money (Y/N)?: ";
     std::cin >> input;
     
     if (input == 'Y')
@@ -37,47 +37,46 @@ bool BlackjackPlayer::evenMoney(Hand hand) {
     return false;
 }
 
-bool BlackjackPlayer::insurance(Hand hand) {
-    std::string input;
-    std::cout << hand.toString() + "\nInsurance?: ";
+bool BlackjackPlayer::insurance() {
+    char input;
+    std::cout << "Insurance? (Y/N): ";
     std::cin >> input;
     
-    if (input == "Y") {
+    if (input == 'Y') 
+        return true; 
+    return false;
+}
+
+bool BlackjackPlayer::split() {
+    char input;
+    cin.ignore();  
+    std::cin >> input;
+    if (input == 'Y') {
         return true;
     }
     return false;
 }
 
-Hand BlackjackPlayer::split(Hand hand) {
-    // if user accepts split offer 
-    // check if the hand can be split if so create a new ante for the hand
-    // create a new hand single card hand and return it
-    return hand;
-}
-
-bool BlackjackPlayer::doubleDown(Hand hand) {
-    std::string input;
-    std::cout << hand.toString() + "\nDouble Down?: ";
-    
-    if (input == "Y") {
-        cin.ignore();
-        std::getline(std::cin, input);
-        //Initial Bet => from previous bet.
-        
+bool BlackjackPlayer::doubleDown() {
+    char input;
+    cin.ignore();
+    std::cout << "Double Down (Y/N): ";
+    std::cin >> input;
+    if (input == 'Y') {
         return true;
     }
-    return true;
+    return false;
 }
 
-bool BlackjackPlayer::hit(Hand hand) {
-    std::string input;
-    std::cout << hand.toString() + "\nWould you like to hit? : ";
+bool BlackjackPlayer::hit() {
+    char input;
+    std::cout << "Hit?: ";
     cin.ignore();
-    std::getline(std::cin, input);
+    std::cin >> input;
     
-    if (input == "Y")
+    if (input == 'Y')
         return true;
-    return true;
+    return false;
 }
 
 std::string BlackjackPlayer::toString() {

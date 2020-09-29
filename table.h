@@ -11,7 +11,7 @@ public:
     Table();
     Table(std::vector<Bet> bets);
     void placeBet(Bet bet);
-    std::Bet getBets();
+    Bet getBets(int i);
     void addPlayer(BlackjackPlayer p);
     std::vector<BlackjackPlayer> getPlayers();
     std::string toString();
